@@ -1,0 +1,68 @@
+<h2 mat-dialog-title>{{tituloAccion}}</h2>
+<mat-dialog-content>
+    <form [formGroup]="formularioUsuario">
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre Completo</mat-label>
+                    <input matInput formControlName="nombreCompleto"
+                        placeholder="Ingrese el nombre completo del usuario" autocomplete="off">
+                    <mat-icon matSuffix>account_box</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Correo</mat-label>
+                    <input matInput formControlName="correo" placeholder="Ingrese el correo del usuario"
+                        autocomplete="off">
+                    <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Rol</mat-label>
+                    <mat-select formControlName="idRol">
+                        <mat-option *ngFor="let rol of listaRoles" [value]="rol.idRol">
+                            {{ rol.nombre }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input [type]="ocultarContrasena ? 'password' : 'text'" formControlName="clave" type="password"
+                        required autocomplete="off" matInput>
+
+                    <button mat-icon-button matSuffix (click)="ocultarContrasena=!ocultarContrasena" type="button">
+                        <mat-icon matSuffix>{{ ocultarContrasena ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Estado</mat-label>
+                    <mat-select formControlName="esActivo">
+                        <mat-option value="1">Activo</mat-option>
+                        <mat-option value="0">Inactivo</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="warm" color="primary">
+        Volver
+    </button>
+    <button mat-raised-button color="primary" (click)="guardarEditar_EditarUsuario()" [disabled]="formularioUsuario.invalid">
+        {{botinAccion}}
+    </button>
+</mat-dialog-actions>

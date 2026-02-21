@@ -32,7 +32,7 @@ private apiUrl = environment.endPoint + 'Usuario';
 
   editar(request: UsuarioInterface): Observable<RespuestaAPI> {
 
-    return this.http.post<RespuestaAPI>(`${this.apiUrl}/Editar`, request);
+    return this.http.put<RespuestaAPI>(`${this.apiUrl}/Editar`, request);
   }
 
     eliminar(id: number): Observable<RespuestaAPI> {
