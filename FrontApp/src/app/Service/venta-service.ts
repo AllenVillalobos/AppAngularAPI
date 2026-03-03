@@ -22,5 +22,9 @@ export class VentaService {
   reporte(fechaInicio:string, fechaFin:string): Observable<RespuestaAPI> {
     return this.http.get<RespuestaAPI>(`${this.apiUrl}/Reporte?fechaInicio=${fechaInicio}&fechaFin=${fechaFin}`);
   }
+
+  registrar(request:VentaInterface):Observable<RespuestaAPI>{
+     return this.http.post<RespuestaAPI>(`${this.apiUrl}/Registrar`, request);
+  }
   
 }

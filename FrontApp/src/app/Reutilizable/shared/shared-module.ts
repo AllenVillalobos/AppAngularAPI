@@ -11,6 +11,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatGridListModule } from '@angular/material/grid-list';
 
+
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -63,7 +64,7 @@ import { MomentDateModule } from '@angular/material-moment-adapter';
     MatAutocompleteModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MomentDateModule
+    MomentDateModule,
   ],
   providers: [
     MatDatepickerModule,

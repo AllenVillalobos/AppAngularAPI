@@ -25,7 +25,7 @@ export class ProductoService {
 
   editar(request: ProductoInterface): Observable<RespuestaAPI> {
 
-    return this.http.post<RespuestaAPI>(`${this.apiUrl}/Editar`, request);
+    return this.http.put<RespuestaAPI>(`${this.apiUrl}/Editar`, request);
   }
 
   eliminar(id: number): Observable<RespuestaAPI> {

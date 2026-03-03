@@ -1,7 +1,7 @@
 export interface ProductoInterface {
     idProducto: number,
     nombre: string,
-    dCategoria: number,
+    idCategoria: number,
     descripcionCategoria: string,
     stock: number,
     precio: string,
